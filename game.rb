@@ -7,7 +7,7 @@ class Game
 
   end
 
-  
+
   # Grabs player names
   def names 
     puts "WeLcOmE tO cOoL mAtH gAmEs!!"
@@ -21,7 +21,7 @@ class Game
   end
 
 
-  # Main game logic, creates question then checks in against the answer
+  # Creates question then checks it against the answer
   def play
     question
     check_answer
@@ -59,6 +59,7 @@ class Game
 
     else
       puts "Seriously? No!"
+
       if @player1.turn
         @player1.life -= 1
         @player1.turn = false
@@ -69,6 +70,7 @@ class Game
         @player1.turn = true
       end
     end
+
     print_life
     game_over?
   end
@@ -86,10 +88,12 @@ class Game
       puts "#{@player2.name} wins with a score of #{@player2.life}/3"
       puts "----- GAME OVER -----"
       puts "Good bye!"
+
     elsif @player2.life == 0
       puts "#{@player1.name} wins with a score of #{@player1.life}/3"
       puts "----- GAME OVER -----"
       puts "Good bye!"
+      
     else
       play
     end
